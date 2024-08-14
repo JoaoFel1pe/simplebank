@@ -15,6 +15,8 @@ func LoadConfig(path string) (config Config, err error) {
 
 	viper.AutomaticEnv()
 
+	viper.SetDefault("SERVER_ADDRESS", "0.0.0.0:8080")
+
 	err = viper.ReadInConfig()
 	if err != nil {
 		return
